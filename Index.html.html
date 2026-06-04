@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universo Tekeno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --tekeno-dark: #393949;
+    --tekeno-blue: #597FED;
+    --tekeno-yellow: #FFB208;
+    --tekeno-red: #F04559;
+    --bg: #f5f5f7;
+    --card-bg: #ffffff;
+    --text-primary: #393949;
+    --text-muted: #6b6b7a;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 0 0 60px;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--tekeno-dark);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+  .header-cta {
+    background: var(--tekeno-red);
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 20px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .header-cta:hover { background: #d03448; transform: scale(1.03); }
+  .header-cta:active { transform: scale(0.97); }
+
+  /* ── BANNER ── */
+  .launch-banner {
+    margin: 20px auto 0;
+    max-width: 960px;
+    padding: 0 16px;
+  }
+  .banner-img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--tekeno-dark);
+    position: relative;
+  }
+  .banner-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .banner-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--tekeno-dark);
+    color: rgba(255,255,255,0.5);
+  }
+  .banner-placeholder .bp-label {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    padding: 0 24px;
+    line-height: 1.4;
+  }
+  .banner-placeholder .bp-size {
+    font-size: 12px;
+    color: var(--tekeno-yellow);
+    font-weight: 500;
+    background: rgba(255,178,8,0.12);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* Launch info below banner */
+  .launch-info {
+    margin: 12px auto 0;
+    max-width: 960px;
+    padding: 0 16px;
+  }
+  .launch-rows {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1.5px solid rgba(255,178,8,0.25);
+    overflow: hidden;
+  }
+  .launch-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(57,57,73,0.07);
+  }
+  .launch-row:last-child { border-bottom: none; }
+  .exp-date {
+    background: var(--tekeno-dark);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    min-width: 80px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .exp-date.active { background: var(--tekeno-red); }
+  .exp-countries {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    line-height: 1.4;
+  }
+  .launch-cta-wrap {
+    padding: 14px 16px;
+    background: var(--card-bg);
+    border-top: 1px solid rgba(57,57,73,0.07);
+  }
+  .launch-cta {
+    display: block;
+    background: var(--tekeno-dark);
+    color: #fff;
+    text-align: center;
+    padding: 13px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  .launch-cta:hover { background: #4a4a5e; }
+  .launch-cta .cta-sub {
+    display: block;
+    font-size: 11px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-header {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px 12px;
+  }
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--tekeno-blue);
+    flex-shrink: 0;
+  }
+  .section-count {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-muted);
+    margin-left: 2px;
+  }
+
+  /* ── GRID ── */
+  .worlds-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .worlds-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  /* Tablet */
+  @media (max-width: 768px) {
+    .worlds-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .site-header { padding: 14px 16px; }
+    .header-logo img { height: 30px; }
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .worlds-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .header-cta { font-size: 12px; padding: 8px 14px; }
+  }
+
+  @media (max-width: 360px) {
+    .worlds-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .world-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(57,57,73,0.08);
+    transition: transform 0.18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .world-card:hover { transform: translateY(-3px); }
+  .world-card:active { transform: scale(0.97); }
+
+  .world-img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #e8e8ed;
+    overflow: hidden;
+    position: relative;
+  }
+  .world-img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #e8e8ed 25%, #f0f0f3 50%, #e8e8ed 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+    z-index: 0;
+  }
+  .world-img-wrap.loaded::before { display: none; }
+  .world-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+  .world-card:hover .world-img-wrap img { transform: scale(1.05); }
+  .world-name {
+    padding: 7px 8px 8px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 11.5px;
+    color: var(--text-primary);
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    margin: 36px auto 0;
+    max-width: 960px;
+    padding: 0 16px;
+    text-align: center;
+  }
+  .footer-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0 auto 4px;
+    /* placeholder — reemplazar con logo cuando esté en GitHub */
+    filter: brightness(0);
+    opacity: 0.7;
+  }
+  .footer-logo-text {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--tekeno-dark);
+  }
+  .footer-logo-text .accent { color: var(--tekeno-yellow); }
+  .footer-cta {
+    display: inline-block;
+    margin-top: 16px;
+    background: var(--tekeno-red);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .footer-cta:hover { background: #d03448; transform: scale(1.03); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-logo">
+    <!--
+      INSTRUCCIÓN GITHUB:
+      Guarda el logo como: assets/logo-universo-tekeno.png
+      La línea de abajo ya apunta a esa ruta.
+    -->
+    <img
+      src="https://drive.google.com/thumbnail?id=1oPS3o4Wcz8WINis4tuBACW1z7xNN5mWR&sz=h80"
+      alt="Universo Tekeno"
+    >
+  </div>
+  <a href="https://tekeno.com" target="_blank" class="header-cta">Ir a Tekeno.com</a>
+</header>
+
+<!-- BANNER -->
+<div class="launch-banner">
+  <div class="banner-img-wrap">
+    <!--
+      INSTRUCCIÓN GITHUB:
+      Sube tu imagen banner (1920×1080px) como: assets/banner-lanzamiento.jpg
+      Reemplaza el src de abajo con: src="assets/banner-lanzamiento.jpg"
+      Tamaño recomendado: 1920 × 1080 px (relación 16:9)
+    -->
+    <img src="" alt="Tekeno llega a Latinoamérica" onerror="this.style.display='none'">
+    <div class="banner-placeholder" id="bannerPlaceholder">
+      <span class="bp-label">Aquí va tu imagen de lanzamiento</span>
+      <span class="bp-size">1920 × 1080 px — formato 16:9</span>
+    </div>
+  </div>
+</div>
+
+<!-- LAUNCH INFO -->
+<div class="launch-info">
+  <div class="launch-rows">
+    <div class="launch-row">
+      <span class="exp-date active">Ya 🎉</span>
+      <span class="exp-countries">🇪🇨 Ecuador</span>
+    </div>
+    <div class="launch-row">
+      <span class="exp-date">Junio</span>
+      <span class="exp-countries">🇻🇪 Venezuela &nbsp; 🇬🇹 Guatemala</span>
+    </div>
+    <div class="launch-row">
+      <span class="exp-date">Agosto</span>
+      <span class="exp-countries">🇧🇷 Brasil &nbsp; 🇲🇽 México &nbsp; 🇦🇷 Argentina</span>
+    </div>
+    <div class="launch-row">
+      <span class="exp-date">Septiembre</span>
+      <span class="exp-countries">🌎 Resto de LATAM</span>
+    </div>
+  </div>
+  <div class="launch-cta-wrap">
+    <a href="https://tekeno.com" target="_blank" class="launch-cta">
+      Visita Tekeno.com
+      <span class="cta-sub">El marketplace para todos los mundos</span>
+    </a>
+  </div>
+</div>
+
+<!-- SECTION HEADER -->
+<div class="section-header">
+  <h2 class="section-title">
+    <span class="section-dot"></span>
+    Explora los Mundos
+    <span class="section-count">28 comunidades</span>
+  </h2>
+</div>
+
+<!-- GRID -->
+<div class="worlds-wrap">
+  <div class="worlds-grid">
+
+    <a class="world-card" href="https://www.instagram.com/mundo_golazos/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Golazo.jpg" alt="Golazo" loading="lazy"></div>
+      <div class="world-name">Golazo</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_cocina_facil/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Cocina fácil.jpg" alt="Cocina Fácil" loading="lazy"></div>
+      <div class="world-name">Cocina Fácil</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_travel_hacks/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Travel hacks.jpg" alt="Travel Hacks" loading="lazy"></div>
+      <div class="world-name">Travel Hacks</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundofirulais_/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Firulais.jpg" alt="Firulais" loading="lazy"></div>
+      <div class="world-name">Firulais</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundochristmas/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Christmas.jpg" alt="Christmas" loading="lazy"></div>
+      <div class="world-name">Christmas</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_piel_bella/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Piel bella.jpg" alt="Piel Bella" loading="lazy"></div>
+      <div class="world-name">Piel Bella</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_coffeetime/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Coffeetime.jpg" alt="Coffeetime" loading="lazy"></div>
+      <div class="world-name">Coffeetime</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_padelmania/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Padelmanía.jpg" alt="Padelmanía" loading="lazy"></div>
+      <div class="world-name">Padelmanía</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_arreglaymejora/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Arregla y mejora.jpg" alt="Arregla y Mejora" loading="lazy"></div>
+      <div class="world-name">Arregla y Mejora</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_vital_mujer/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Vital mujer.jpg" alt="Vital Mujer" loading="lazy"></div>
+      <div class="world-name">Vital Mujer</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_truco_hogar/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Truco hogar.jpg" alt="Truco Hogar" loading="lazy"></div>
+      <div class="world-name">Truco Hogar</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_michi_miau/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Michi miau.jpg" alt="Michi Miau" loading="lazy"></div>
+      <div class="world-name">Michi Miau</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_popmart/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Popmart.jpg" alt="Popmart" loading="lazy"></div>
+      <div class="world-name">Popmart</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_formula_uno/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Fórmula 1.jpg" alt="Fórmula 1" loading="lazy"></div>
+      <div class="world-name">Fórmula 1</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_barba_sabia/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Barba Sabia.jpg" alt="Barba Sabia" loading="lazy"></div>
+      <div class="world-name">Barba Sabia</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_gadgets_utiles/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Gadgets útiles.jpg" alt="Gadgets Útiles" loading="lazy"></div>
+      <div class="world-name">Gadgets Útiles</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_combinarte/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Combinarte.jpg" alt="Combinarte" loading="lazy"></div>
+      <div class="world-name">Combinarte</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_party_ideas/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Party ideas.jpg" alt="Party Ideas" loading="lazy"></div>
+      <div class="world-name">Party Ideas</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_bombero/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Bomberos.jpg" alt="Bomberos" loading="lazy"></div>
+      <div class="world-name">Bomberos</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_estilo_hombre/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Estilo hombre.jpg" alt="Estilo Hombre" loading="lazy"></div>
+      <div class="world-name">Estilo Hombre</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_bijou_shop/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Bijou Shop.png" alt="Bijou Shop" loading="lazy"></div>
+      <div class="world-name">Bijou Shop</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_lo_quiero/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Lo quiero.png" alt="Lo Quiero" loading="lazy"></div>
+      <div class="world-name">Lo Quiero</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_luzyhogar/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Luz y hogar.jpg" alt="Luz y Hogar" loading="lazy"></div>
+      <div class="world-name">Luz y Hogar</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_retropop/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Retropop.jpg" alt="Retropop" loading="lazy"></div>
+      <div class="world-name">Retropop</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_hello_kitty/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Hello Kitty.jpg" alt="Hello Kitty" loading="lazy"></div>
+      <div class="world-name">Hello Kitty</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_pequenoslistos/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Pequeños listos.jpg" alt="Pequeños Listos" loading="lazy"></div>
+      <div class="world-name">Pequeños Listos</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundoguarzonadas/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Guarzonadas.jpg" alt="Guarzonadas" loading="lazy"></div>
+      <div class="world-name">Guarzonadas</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_crochetmania/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Crochetmanía.jpg" alt="Crochetmanía" loading="lazy"></div>
+      <div class="world-name">Crochetmanía</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <!--
+    INSTRUCCIÓN GITHUB:
+    Cuando tengas el logo definitivo, descomenta el <img> y borra el <div class="footer-logo-text">
+    <img src="assets/logo-universo-tekeno.png" alt="Universo Tekeno" class="footer-logo">
+  -->
+  <div class="footer-logo-text">TE<span class="accent">K</span>ENO</div>
+  <br>
+  <a href="https://tekeno.com" target="_blank" class="footer-cta">Ir a Tekeno.com</a>
+</footer>
+
+<script>
+  document.querySelectorAll('.world-img-wrap img').forEach(img => {
+    const wrap = img.closest('.world-img-wrap');
+    const onLoad = () => wrap.classList.add('loaded');
+    if (img.complete && img.naturalWidth > 0) onLoad();
+    else img.addEventListener('load', onLoad);
+  });
+
+  const bannerImg = document.querySelector('.banner-img-wrap img');
+  const placeholder = document.getElementById('bannerPlaceholder');
+  if (bannerImg) {
+    bannerImg.addEventListener('load', () => {
+      if (placeholder) placeholder.style.display = 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
