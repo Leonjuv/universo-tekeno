@@ -31,7 +31,7 @@
     padding: 0 0 60px;
   }
 
-  /* ── HEADER ── */
+  /* HEADER */
   .site-header {
     background: var(--tekeno-dark);
     padding: 16px 24px;
@@ -43,7 +43,7 @@
     z-index: 100;
   }
   .header-logo img {
-    height: 36px;
+    height: 56px;
     width: auto;
     display: block;
   }
@@ -63,7 +63,7 @@
   .header-cta:hover { background: #d03448; transform: scale(1.03); }
   .header-cta:active { transform: scale(0.97); }
 
-  /* ── BANNER ── */
+  /* BANNER */
   .launch-banner {
     margin: 20px auto 0;
     max-width: 960px;
@@ -112,7 +112,7 @@
     border-radius: 20px;
   }
 
-  /* Launch info below banner */
+  /* Launch info */
   .launch-info {
     margin: 12px auto 0;
     max-width: 960px;
@@ -183,7 +183,7 @@
     margin-top: 2px;
   }
 
-  /* ── SECTION TITLE ── */
+  /* SECTION TITLE */
   .section-header {
     max-width: 960px;
     margin: 0 auto;
@@ -212,7 +212,7 @@
     margin-left: 2px;
   }
 
-  /* ── GRID ── */
+  /* GRID */
   .worlds-wrap {
     max-width: 960px;
     margin: 0 auto;
@@ -224,19 +224,15 @@
     gap: 12px;
   }
 
-  /* Tablet */
   @media (max-width: 768px) {
     .worlds-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .site-header { padding: 14px 16px; }
-    .header-logo img { height: 30px; }
+    .header-logo img { height: 44px; }
   }
-
-  /* Mobile */
   @media (max-width: 480px) {
     .worlds-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .header-cta { font-size: 12px; padding: 8px 14px; }
   }
-
   @media (max-width: 360px) {
     .worlds-grid { grid-template-columns: repeat(2, 1fr); }
   }
@@ -297,7 +293,7 @@
     100% { background-position: -200% 0; }
   }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   .site-footer {
     margin: 36px auto 0;
     max-width: 960px;
@@ -305,24 +301,13 @@
     text-align: center;
   }
   .footer-logo img {
-    height: 40px;
+    height: 52px;
     width: auto;
     display: block;
-    margin: 0 auto 4px;
-    /* placeholder — reemplazar con logo cuando esté en GitHub */
-    filter: brightness(0);
-    opacity: 0.7;
+    margin: 0 auto 16px;
   }
-  .footer-logo-text {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 900;
-    font-size: 22px;
-    color: var(--tekeno-dark);
-  }
-  .footer-logo-text .accent { color: var(--tekeno-yellow); }
   .footer-cta {
     display: inline-block;
-    margin-top: 16px;
     background: var(--tekeno-red);
     color: #fff;
     text-decoration: none;
@@ -341,15 +326,7 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="header-logo">
-    <!--
-      INSTRUCCIÓN GITHUB:
-      Guarda el logo como: assets/logo-universo-tekeno.png
-      La línea de abajo ya apunta a esa ruta.
-    -->
-    <img
-      src="https://drive.google.com/thumbnail?id=1oPS3o4Wcz8WINis4tuBACW1z7xNN5mWR&sz=h80"
-      alt="Universo Tekeno"
-    >
+    <img src="assets/logo-universo-tekeno.png" alt="Universo Tekeno">
   </div>
   <a href="https://tekeno.com" target="_blank" class="header-cta">Ir a Tekeno.com</a>
 </header>
@@ -357,16 +334,10 @@
 <!-- BANNER -->
 <div class="launch-banner">
   <div class="banner-img-wrap">
-    <!--
-      INSTRUCCIÓN GITHUB:
-      Sube tu imagen banner (1920×1080px) como: assets/banner-lanzamiento.jpg
-      Reemplaza el src de abajo con: src="assets/banner-lanzamiento.jpg"
-      Tamaño recomendado: 1920 × 1080 px (relación 16:9)
-    -->
-    <img src="" alt="Tekeno llega a Latinoamérica" onerror="this.style.display='none'">
+    <img src="" alt="Tekeno llega a Latinoamerica" onerror="this.style.display='none'">
     <div class="banner-placeholder" id="bannerPlaceholder">
-      <span class="bp-label">Aquí va tu imagen de lanzamiento</span>
-      <span class="bp-size">1920 × 1080 px — formato 16:9</span>
+      <span class="bp-label">Aqui va tu imagen de lanzamiento</span>
+      <span class="bp-size">1920 x 1080 px</span>
     </div>
   </div>
 </div>
@@ -384,7 +355,7 @@
     </div>
     <div class="launch-row">
       <span class="exp-date">Agosto</span>
-      <span class="exp-countries">🇧🇷 Brasil &nbsp; 🇲🇽 México &nbsp; 🇦🇷 Argentina</span>
+      <span class="exp-countries">🇧🇷 Brasil &nbsp; 🇲🇽 Mexico &nbsp; 🇦🇷 Argentina</span>
     </div>
     <div class="launch-row">
       <span class="exp-date">Septiembre</span>
@@ -404,7 +375,7 @@
   <h2 class="section-title">
     <span class="section-dot"></span>
     Explora los Mundos
-    <span class="section-count">28 comunidades</span>
+    <span class="section-count">27 comunidades</span>
   </h2>
 </div>
 
@@ -418,8 +389,8 @@
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_cocina_facil/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Cocina fácil.jpg" alt="Cocina Fácil" loading="lazy"></div>
-      <div class="world-name">Cocina Fácil</div>
+      <div class="world-img-wrap"><img src="assets/Cocina-facil.jpg" alt="Cocina Facil" loading="lazy"></div>
+      <div class="world-name">Cocina Facil</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_travel_hacks/" target="_blank">
@@ -448,8 +419,8 @@
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_padelmania/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Padelmanía.jpg" alt="Padelmanía" loading="lazy"></div>
-      <div class="world-name">Padelmanía</div>
+      <div class="world-img-wrap"><img src="assets/Padelmania.jpg" alt="Padelmania" loading="lazy"></div>
+      <div class="world-name">Padelmania</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_arreglaymejora/" target="_blank">
@@ -478,8 +449,8 @@
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_formula_uno/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Fórmula 1.jpg" alt="Fórmula 1" loading="lazy"></div>
-      <div class="world-name">Fórmula 1</div>
+      <div class="world-img-wrap"><img src="assets/Formula-1.jpg" alt="Formula 1" loading="lazy"></div>
+      <div class="world-name">Formula 1</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_barba_sabia/" target="_blank">
@@ -488,8 +459,8 @@
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_gadgets_utiles/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Gadgets útiles.jpg" alt="Gadgets Útiles" loading="lazy"></div>
-      <div class="world-name">Gadgets Útiles</div>
+      <div class="world-img-wrap"><img src="assets/Gadgets-utiles.jpg" alt="Gadgets Utiles" loading="lazy"></div>
+      <div class="world-name">Gadgets Utiles</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_combinarte/" target="_blank">
@@ -538,8 +509,8 @@
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_pequenoslistos/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Pequeños listos.jpg" alt="Pequeños Listos" loading="lazy"></div>
-      <div class="world-name">Pequeños Listos</div>
+      <div class="world-img-wrap"><img src="assets/Pequenos-listos.jpg" alt="Pequenos Listos" loading="lazy"></div>
+      <div class="world-name">Pequenos Listos</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundoguarzonadas/" target="_blank">
@@ -547,23 +518,14 @@
       <div class="world-name">Guarzonadas</div>
     </a>
 
-    <a class="world-card" href="https://www.instagram.com/mundo_crochetmania/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Crochetmanía.jpg" alt="Crochetmanía" loading="lazy"></div>
-      <div class="world-name">Crochetmanía</div>
-    </a>
-
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <!--
-    INSTRUCCIÓN GITHUB:
-    Cuando tengas el logo definitivo, descomenta el <img> y borra el <div class="footer-logo-text">
-    <img src="assets/logo-universo-tekeno.png" alt="Universo Tekeno" class="footer-logo">
-  -->
-  <div class="footer-logo-text">TE<span class="accent">K</span>ENO</div>
-  <br>
+  <div class="footer-logo">
+    <img src="assets/logo-universo-tekeno.png" alt="Universo Tekeno">
+  </div>
   <a href="https://tekeno.com" target="_blank" class="footer-cta">Ir a Tekeno.com</a>
 </footer>
 
