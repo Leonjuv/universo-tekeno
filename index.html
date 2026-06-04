@@ -162,18 +162,20 @@
   }
   .launch-cta {
     display: block;
-    background: var(--tekeno-dark);
+    background: var(--tekeno-blue);
     color: #fff;
     text-align: center;
-    padding: 13px;
-    border-radius: var(--radius-sm);
+    padding: 13px 32px;
+    border-radius: 50px;
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
     font-weight: 900;
     font-size: 14px;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(89,127,237,0.35);
   }
-  .launch-cta:hover { background: #4a4a5e; }
+  .launch-cta:hover { background: #4a6fd4; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(89,127,237,0.5); }
+  .launch-cta:active { transform: scale(0.97); }
   .launch-cta .cta-sub {
     display: block;
     font-size: 11px;
@@ -301,7 +303,7 @@
     text-align: center;
   }
   .footer-logo img {
-    height: 208px;
+    height: 130px;
     width: auto;
     display: block;
     margin: 0 auto 16px;
@@ -319,6 +321,46 @@
     transition: background 0.2s, transform 0.15s;
   }
   .footer-cta:hover { background: #d03448; transform: scale(1.03); }
+
+  /* MARQUEE */
+  .marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1.5px solid rgba(255,178,8,0.25);
+    padding: 14px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: max-content;
+    animation: marquee-scroll 28s linear infinite;
+  }
+  .marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
+  .marquee-item {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-primary);
+    white-space: nowrap;
+    padding: 0 10px;
+  }
+  .marquee-item.active-item { color: var(--tekeno-red); }
+  .marquee-item.date-item { color: var(--tekeno-blue); }
+  .marquee-sep {
+    color: var(--tekeno-yellow);
+    font-size: 12px;
+    padding: 0 6px;
+    flex-shrink: 0;
+  }
+  @keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 </style>
 </head>
 <body>
@@ -334,8 +376,8 @@
 <!-- BANNER -->
 <div class="launch-banner">
   <div class="banner-img-wrap">
-    <img src="" alt="Tekeno llega a Latinoamerica" onerror="this.style.display='none'">
-    <div class="banner-placeholder" id="bannerPlaceholder">
+    <img src="assets/BANNER TEKENO.png" alt="Tekeno llega a Latinoamerica">
+    <div class="banner-placeholder" id="bannerPlaceholder" style="display:none">
       <span class="bp-label">Aqui va tu imagen de lanzamiento</span>
       <span class="bp-size">1920 x 1080 px</span>
     </div>
@@ -344,22 +386,53 @@
 
 <!-- LAUNCH INFO -->
 <div class="launch-info">
-  <div class="launch-rows">
-    <div class="launch-row">
-      <span class="exp-date active">Ya 🎉</span>
-      <span class="exp-countries">🇪🇨 Ecuador</span>
-    </div>
-    <div class="launch-row">
-      <span class="exp-date">Junio</span>
-      <span class="exp-countries">🇻🇪 Venezuela &nbsp; 🇬🇹 Guatemala</span>
-    </div>
-    <div class="launch-row">
-      <span class="exp-date">Agosto</span>
-      <span class="exp-countries">🇧🇷 Brasil &nbsp; 🇲🇽 Mexico &nbsp; 🇦🇷 Argentina</span>
-    </div>
-    <div class="launch-row">
-      <span class="exp-date">Septiembre</span>
-      <span class="exp-countries">🌎 Resto de LATAM</span>
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span class="marquee-item active-item">🟢 Ya disponible</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇪🇨 Ecuador</span>
+      <span class="marquee-sep">✦</span>
+      <span class="marquee-item date-item">🗓 Junio</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇻🇪 Venezuela</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇬🇹 Guatemala</span>
+      <span class="marquee-sep">✦</span>
+      <span class="marquee-item date-item">🗓 Agosto</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇧🇷 Brasil</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇲🇽 México</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇦🇷 Argentina</span>
+      <span class="marquee-sep">✦</span>
+      <span class="marquee-item date-item">🗓 Septiembre</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🌎 Resto de LATAM</span>
+      <span class="marquee-sep">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item active-item">🟢 Ya disponible</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇪🇨 Ecuador</span>
+      <span class="marquee-sep">✦</span>
+      <span class="marquee-item date-item">🗓 Junio</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇻🇪 Venezuela</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇬🇹 Guatemala</span>
+      <span class="marquee-sep">✦</span>
+      <span class="marquee-item date-item">🗓 Agosto</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇧🇷 Brasil</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇲🇽 México</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🇦🇷 Argentina</span>
+      <span class="marquee-sep">✦</span>
+      <span class="marquee-item date-item">🗓 Septiembre</span>
+      <span class="marquee-sep">·</span>
+      <span class="marquee-item">🌎 Resto de LATAM</span>
+      <span class="marquee-sep">✦</span>
     </div>
   </div>
   <div class="launch-cta-wrap">
