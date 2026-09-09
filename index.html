@@ -378,6 +378,43 @@
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+
+  /* HERO STATS */
+  .hero-stats {
+    margin: 20px auto 0;
+    max-width: 960px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .stat-item {
+    background: var(--tekeno-dark);
+    color: #fff;
+    flex: 1;
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(57,57,73,0.18);
+  }
+  .stat-value {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--tekeno-yellow);
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  @media (max-width: 768px) {
+    .hero-stats { flex-direction: column; }
+    .stat-value { font-size: 28px; }
+  }
 </style>
 </head>
 <body>
@@ -390,32 +427,30 @@
   <a href="https://tekeno.com" target="_blank" class="header-cta">Ir a Tekeno.com</a>
 </header>
 
-<!-- BANNER -->
-<div class="launch-banner">
-  <a href="https://tekeno.com" target="_blank" style="display:block;text-decoration:none;">
-    <div class="banner-img-wrap">
-      <img src="assets/BANNER LANDING TEKENO.webp" alt="Tekeno llega a Latinoamerica">
-      <div class="banner-placeholder" id="bannerPlaceholder" style="display:none">
-        <span class="bp-label">Aqui va tu imagen de lanzamiento</span>
-        <span class="bp-size">1920 x 1080 px</span>
-      </div>
-    </div>
-  </a>
+<!-- HERO STATS -->
+<div class="hero-stats">
+  <div class="stat-item">
+    <div class="stat-value">314.042</div>
+    <div class="stat-label">Seguidores</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">29.958.106</div>
+    <div class="stat-label">Alcance</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">40.035.909</div>
+    <div class="stat-label">Visualizaciones</div>
+  </div>
 </div>
 
 <!-- LAUNCH INFO -->
 <div class="launch-info">
   <div class="marquee-wrapper">
-    <div class="marquee-track">
-      <span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap dark"><span class="mlabel">JULIO</span> &ensp; <img src="assets/Venezuela.png" class="flag-icon" alt="VENEZUELA" onerror="this.style.display='none'"><span class="flag-label">VENEZUELA</span> &ensp; <img src="assets/Guatemala.png" class="flag-icon" alt="GUATEMALA" onerror="this.style.display='none'"><span class="flag-label">GUATEMALA</span></span><span class="msep"></span><span class="mcap dark"><span class="mlabel">SEPTIEMBRE</span> &ensp; <img src="assets/Brasil.png" class="flag-icon" alt="BRASIL" onerror="this.style.display='none'"><span class="flag-label">BRASIL</span> &ensp; <img src="assets/Mexico.png" class="flag-icon" alt="MÉXICO" onerror="this.style.display='none'"><span class="flag-label">MÉXICO</span> &ensp; <img src="assets/Argentina.png" class="flag-icon" alt="ARGENTINA" onerror="this.style.display='none'"><span class="flag-label">ARGENTINA</span></span><span class="msep"></span><span class="mcap dark"><span class="mlabel">OCTUBRE</span> &ensp; <img src="assets/Mundo.png" class="flag-icon" alt="RESTO DE LATAM" onerror="this.style.display='none'"><span class="flag-label">RESTO DE LATAM</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap dark"><span class="mlabel">JULIO</span> &ensp; <img src="assets/Venezuela.png" class="flag-icon" alt="VENEZUELA" onerror="this.style.display='none'"><span class="flag-label">VENEZUELA</span> &ensp; <img src="assets/Guatemala.png" class="flag-icon" alt="GUATEMALA" onerror="this.style.display='none'"><span class="flag-label">GUATEMALA</span></span><span class="msep"></span><span class="mcap dark"><span class="mlabel">SEPTIEMBRE</span> &ensp; <img src="assets/Brasil.png" class="flag-icon" alt="BRASIL" onerror="this.style.display='none'"><span class="flag-label">BRASIL</span> &ensp; <img src="assets/Mexico.png" class="flag-icon" alt="MÉXICO" onerror="this.style.display='none'"><span class="flag-label">MÉXICO</span> &ensp; <img src="assets/Argentina.png" class="flag-icon" alt="ARGENTINA" onerror="this.style.display='none'"><span class="flag-label">ARGENTINA</span></span><span class="msep"></span><span class="mcap dark"><span class="mlabel">OCTUBRE</span> &ensp; <img src="assets/Mundo.png" class="flag-icon" alt="RESTO DE LATAM" onerror="this.style.display='none'"><span class="flag-label">RESTO DE LATAM</span></span><span class="msep"></span>
+        <div class="marquee-track">
+      <span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="assets/Ecuador.png" class="flag-icon" alt="ECUADOR" onerror="this.style.display='none'"><span class="flag-label">ECUADOR</span></span><span class="msep"></span><span class="mcap green">✔ YA DISPONIBLE &ensp; <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="ESTADOS UNIDOS" onerror="this.style.display='none'"><span class="flag-label">ESTADOS UNIDOS</span></span><span class="msep"></span>
     </div>
   </div>
-  <div class="launch-cta-wrap">
-    <a href="https://tekeno.com" target="_blank" class="launch-cta">
-      Visita Tekeno.com
-      <span class="cta-sub">El marketplace que habla tu idioma</span>
-    </a>
-  </div>
+  
 </div>
 
 <!-- SECTION HEADER -->
@@ -430,44 +465,9 @@
 <div class="worlds-wrap">
   <div class="worlds-grid">
 
-        <a class="world-card" href="https://www.instagram.com/universo_tekeno/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/2 Universo Tekeno.jpg" alt="Universo Tekeno" loading="lazy"></div>
-      <div class="world-name">Universo Tekeno</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_golazos/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Golazo.jpg" alt="Golazo" loading="lazy"></div>
-      <div class="world-name">Golazo</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_cocina_facil/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Cocina-facil.jpg" alt="Cocina Facil" loading="lazy"></div>
-      <div class="world-name">Cocina Facil</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_travel_hacks/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Travel hacks.jpg" alt="Travel Hacks" loading="lazy"></div>
-      <div class="world-name">Travel Hacks</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundofirulais_/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Firulais.jpg" alt="Firulais" loading="lazy"></div>
-      <div class="world-name">Firulais</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundochristmas/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Christmas.jpg" alt="Christmas" loading="lazy"></div>
-      <div class="world-name">Christmas</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_piel_bella/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Piel bella.jpg" alt="Piel Bella" loading="lazy"></div>
-      <div class="world-name">Piel Bella</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_coffeetime/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Coffeetime.jpg" alt="Coffeetime" loading="lazy"></div>
-      <div class="world-name">Coffeetime</div>
+    <a class="world-card" href="https://www.instagram.com/mundo_bombero/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Bomberos.jpg" alt="Bomberos" loading="lazy"></div>
+      <div class="world-name">Bomberos</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_padelmania/" target="_blank">
@@ -475,29 +475,14 @@
       <div class="world-name">Padelmania</div>
     </a>
 
-    <a class="world-card" href="https://www.instagram.com/mundo_arreglaymejora/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Arregla y mejora.jpg" alt="Arregla y Mejora" loading="lazy"></div>
-      <div class="world-name">Arregla y Mejora</div>
+    <a class="world-card" href="https://www.instagram.com/mundo_hello_kitty/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Hello Kitty.jpg" alt="Hello Kitty" loading="lazy"></div>
+      <div class="world-name">Hello Kitty</div>
     </a>
 
-    <a class="world-card" href="https://www.instagram.com/mundo_vital_mujer/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Vital mujer.jpg" alt="Vital Mujer" loading="lazy"></div>
-      <div class="world-name">Vital Mujer</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_truco_hogar/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Truco hogar.jpg" alt="Truco Hogar" loading="lazy"></div>
-      <div class="world-name">Truco Hogar</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_michi_miau/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Michi miau.jpg" alt="Michi Miau" loading="lazy"></div>
-      <div class="world-name">Michi Miau</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_popmart/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Popmart.jpg" alt="Popmart" loading="lazy"></div>
-      <div class="world-name">Popmart</div>
+    <a class="world-card" href="https://www.instagram.com/mundofirulais_/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Firulais.jpg" alt="Firulais" loading="lazy"></div>
+      <div class="world-name">Firulais</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_formula_uno/" target="_blank">
@@ -505,9 +490,74 @@
       <div class="world-name">Formula 1</div>
     </a>
 
+    <a class="world-card" href="https://www.instagram.com/mundo_retropop/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Retropop.jpg" alt="Retropop" loading="lazy"></div>
+      <div class="world-name">Retropop</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_truco_hogar/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Truco hogar.jpg" alt="Truco Hogar" loading="lazy"></div>
+      <div class="world-name">Truco Hogar</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_bijou_shop/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Bijou Shop.png" alt="Bijou Shop" loading="lazy"></div>
+      <div class="world-name">Bijou Shop</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundochristmas/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Christmas.jpg" alt="Christmas" loading="lazy"></div>
+      <div class="world-name">Christmas</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_golazos/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Golazo.jpg" alt="Golazo" loading="lazy"></div>
+      <div class="world-name">Golazo</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_arreglaymejora/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Arregla y mejora.jpg" alt="Arregla y Mejora" loading="lazy"></div>
+      <div class="world-name">Arregla y Mejora</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundoguarzonadas/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Guarzonadas.jpg" alt="Guarzonadas" loading="lazy"></div>
+      <div class="world-name">Guarzonadas</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_party_ideas/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Party ideas.jpg" alt="Party Ideas" loading="lazy"></div>
+      <div class="world-name">Party Ideas</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_vital_mujer/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Vital mujer.jpg" alt="Vital Mujer" loading="lazy"></div>
+      <div class="world-name">Vital Mujer</div>
+    </a>
+
     <a class="world-card" href="https://www.instagram.com/mundo_barba_sabia/" target="_blank">
       <div class="world-img-wrap"><img src="assets/Barba Sabia.jpg" alt="Barba Sabia" loading="lazy"></div>
       <div class="world-name">Barba Sabia</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_michi_miau/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Michi miau.jpg" alt="Michi Miau" loading="lazy"></div>
+      <div class="world-name">Michi Miau</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_cocina_facil/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Cocina-facil.jpg" alt="Cocina Facil" loading="lazy"></div>
+      <div class="world-name">Cocina Facil</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_coffeetime/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Coffeetime.jpg" alt="Coffeetime" loading="lazy"></div>
+      <div class="world-name">Coffeetime</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_luzyhogar/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Luz y hogar.jpg" alt="Luz y Hogar" loading="lazy"></div>
+      <div class="world-name">Luz y Hogar</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_gadgets_utiles/" target="_blank">
@@ -520,44 +570,9 @@
       <div class="world-name">Combinarte</div>
     </a>
 
-    <a class="world-card" href="https://www.instagram.com/mundo_party_ideas/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Party ideas.jpg" alt="Party Ideas" loading="lazy"></div>
-      <div class="world-name">Party Ideas</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_bombero/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Bomberos.jpg" alt="Bomberos" loading="lazy"></div>
-      <div class="world-name">Bomberos</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_estilo_hombre/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Estilo hombre.jpg" alt="Estilo Hombre" loading="lazy"></div>
-      <div class="world-name">Estilo Hombre</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_bijou_shop/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Bijou Shop.png" alt="Bijou Shop" loading="lazy"></div>
-      <div class="world-name">Bijou Shop</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_lo_quiero/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Lo quiero.png" alt="Lo Quiero" loading="lazy"></div>
-      <div class="world-name">Lo Quiero</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_luzyhogar/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Luz y hogar.jpg" alt="Luz y Hogar" loading="lazy"></div>
-      <div class="world-name">Luz y Hogar</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_retropop/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Retropop.jpg" alt="Retropop" loading="lazy"></div>
-      <div class="world-name">Retropop</div>
-    </a>
-
-    <a class="world-card" href="https://www.instagram.com/mundo_hello_kitty/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Hello Kitty.jpg" alt="Hello Kitty" loading="lazy"></div>
-      <div class="world-name">Hello Kitty</div>
+    <a class="world-card" href="https://www.instagram.com/mundo_travel_hacks/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Travel hacks.jpg" alt="Travel Hacks" loading="lazy"></div>
+      <div class="world-name">Travel Hacks</div>
     </a>
 
     <a class="world-card" href="https://www.instagram.com/mundo_pequenoslistos/" target="_blank">
@@ -565,21 +580,50 @@
       <div class="world-name">Pequenos Listos</div>
     </a>
 
-    <a class="world-card" href="https://www.instagram.com/mundoguarzonadas/" target="_blank">
-      <div class="world-img-wrap"><img src="assets/Guarzonadas.jpg" alt="Guarzonadas" loading="lazy"></div>
-      <div class="world-name">Guarzonadas</div>
-    </a>
     <a class="world-card" href="https://www.instagram.com/mundo_crochetmania/" target="_blank">
       <div class="world-img-wrap"><img src="assets/Crochetmania.jpg" alt="Crochetmania" loading="lazy"></div>
       <div class="world-name">Crochetmania</div>
     </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_estilo_hombre/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Estilo hombre.jpg" alt="Estilo Hombre" loading="lazy"></div>
+      <div class="world-name">Estilo Hombre</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_popmart/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Popmart.jpg" alt="Popmart" loading="lazy"></div>
+      <div class="world-name">Popmart</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_piel_bella/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Piel bella.jpg" alt="Piel Bella" loading="lazy"></div>
+      <div class="world-name">Piel Bella</div>
+    </a>
+
+    <a class="world-card" href="https://www.instagram.com/mundo_lo_quiero/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/Lo quiero.png" alt="Lo Quiero" loading="lazy"></div>
+      <div class="world-name">Lo Quiero</div>
+    </a>
+
     <a class="world-card" href="https://www.instagram.com/tekenoshop/" target="_blank">
       <div class="world-img-wrap"><img src="assets/Tekeno.jpg" alt="Tekeno" loading="lazy"></div>
       <div class="world-name">Tekeno</div>
     </a>
 
+    <a class="world-card" href="https://www.instagram.com/universo_tekeno/" target="_blank">
+      <div class="world-img-wrap"><img src="assets/2 Universo Tekeno.jpg" alt="Universo Tekeno" loading="lazy"></div>
+      <div class="world-name">Universo Tekeno</div>
+    </a>
+
   </div>
 </div>
+
+<div class="launch-cta-wrap" style="text-align: center; margin: 32px auto 0; max-width: 300px; padding: 0 16px;">
+    <a href="https://tekeno.com" target="_blank" class="launch-cta">
+      Visita Tekeno.com
+      <span class="cta-sub">El marketplace que habla tu idioma</span>
+    </a>
+  </div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
