@@ -33,7 +33,9 @@
 
   /* HEADER */
   .site-header {
-    background: var(--tekeno-dark);
+    background: rgba(57, 57, 73, 0.75); /* --tekeno-dark traslúcido */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 16px 24px;
     display: flex;
     align-items: center;
@@ -41,6 +43,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .header-logo img {
     height: 72px;
