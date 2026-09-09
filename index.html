@@ -28,7 +28,7 @@
     background: var(--bg);
     color: var(--text-primary);
     min-height: 100vh;
-    padding: 0 0 60px;
+    padding: 0;
   }
 
   /* HEADER */
@@ -305,30 +305,34 @@
 
   /* FOOTER */
   .site-footer {
-    margin: 36px auto 0;
-    max-width: 960px;
-    padding: 0 16px;
+    margin-top: 48px;
     text-align: center;
   }
   .footer-logo img {
-    height: 130px;
+    height: 100px;
     width: auto;
     display: block;
-    margin: 0 auto 16px;
+    margin: 0 auto 24px;
   }
-  .footer-cta {
-    display: inline-block;
+  @media (max-width: 768px) {
+    .footer-logo img { height: 80px; }
+  }
+  .footer-bar {
     background: var(--tekeno-red);
+    width: 100%;
+  }
+  .footer-cta-bar {
+    display: block;
     color: #fff;
     text-decoration: none;
-    padding: 12px 32px;
-    border-radius: 50px;
+    padding: 18px 16px;
     font-family: 'Nunito', sans-serif;
     font-weight: 900;
-    font-size: 15px;
-    transition: background 0.2s, transform 0.15s;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
   }
-  .footer-cta:hover { background: #d03448; transform: scale(1.03); }
+  .footer-cta-bar:hover { background: #d03448; }
 
   /* MARQUEE */
   .marquee-wrapper {
@@ -642,7 +646,9 @@
   <div class="footer-logo">
     <img src="assets/LOGO_Icono Universo Tekeno Negro.png" alt="Universo Tekeno">
   </div>
-  <a href="https://tekeno.com" target="_blank" class="footer-cta">Ir a Tekeno.com</a>
+  <div class="footer-bar">
+    <a href="https://tekeno.com" target="_blank" class="footer-cta-bar">Ir a Tekeno.com</a>
+  </div>
 </footer>
 
 <script>
